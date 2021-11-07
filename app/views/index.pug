@@ -1,10 +1,12 @@
-html
+doctype html
+html(lang='pt-br')
   head
     meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
     link(rel="stylesheet", href="/css/css.css")
-    title Página inicial
+    script(src="/js/front.js") 
+    title= `Página inicial - ${eu}`
   body
     h1= eu
     div(style="background:red", id="meio") Olar, eu sou #{eu}  kkkkjotaaar
     div(id='btn')
-      button(onclick='alert("oi")')= "é assim  >"
+      button(onclick='joe("do it something here")')= "é assim  >"

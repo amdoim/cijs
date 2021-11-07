@@ -4,8 +4,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const MONGO_URL = process.env.MONGO_URL
-
+const MONGO_URL = process.env.URL_MONGO
 mongoose.Promise = global.Promise
 
 function connectBd (){
