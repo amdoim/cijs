@@ -13,6 +13,8 @@ This project is also to pratice my english, because it's rust xD
 
 ## Install
 
+Please don't forget to create and change the file .env with your URL_MONGO inside.
+
 git clone THIS REPOSITORY 
 
 npm install
