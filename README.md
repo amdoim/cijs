@@ -1,6 +1,6 @@
 # cijs
 
-This is a little project to study APIs using simple CRUD, MVC and the design pattern Factory.
+This is a little project to study APIs RESTfull using simple CRUD, MONGODB, MVC and the design pattern Factory.
 
 Yes, it's using the framework Expressjs.
 
