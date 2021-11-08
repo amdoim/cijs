@@ -9,7 +9,7 @@ Views is there just to complement the studies.
 
 Sorry by the user guide, it does not exists yet, but it will...
 
-This project is also to pratice my english, because it's rust xD
+This project is also to pratice my english, because it's rust as you can see xD
 
 ## Install
 
