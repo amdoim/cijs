@@ -75,7 +75,8 @@ function AppController(){
       { regI: new RegExp(decodeURI(req.params.messageId.replace(/\+/g, " ")), 'i') } : 
       { regI: new RegExp(`^${decodeURI(req.params.nomeGiria.replace(/\+/g, " "))}\$`, 'i') }
     //console.log(queryx)
-    App.find( { texto : queryx.regI } )
+    const temp = req.params.messageId ? { texto : queryx.regI } : { titulo : queryx.regI }
+    App.find( temp )
       .then((data) => {
         if (!data) {
           return res.status(404).send({
