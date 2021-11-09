@@ -20,33 +20,33 @@ function AppController(){
       titulo: req.body.titulo,
       tags: req.body.tags,
       texto: req.body.texto
-    });
+    })
     message
       .save()
       .then((data) => {
-        res.send(data);
+        res.send(data)
       })
       .catch((err) => {
         res.status(500).send({
           message:
             err.message || "Some error occurred while creating the Message.",
-        });
-      });
-  };
+        })
+      })
+  }
 
   // Retrieve all messages from the database.
   const findAll = (req, res) => {
     App.find()
       .then((data) => {
-        res.send(data);
+        res.send(data)
       })
       .catch((err) => {
         res.status(500).send({
           message:
             err.message || "Some error occurred while retrieving messages.",
-        });
-      });
-  };
+        })
+      })
+  }
 
   // Find a single message with a messageId
   const findOne = (req, res) => {
@@ -55,21 +55,21 @@ function AppController(){
         if (!data) {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
-        res.send(data);
+        res.send(data)
       })
       .catch((err) => {
         if (err.kind === "ObjectId") {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
         return res.status(500).send({
           message: "Error retrieving message with id " + req.params.messageId,
-        });
-      });
-  };
+        })
+      })
+  }
   // Find a single message with a STRING
   //'^' +search + '$', 'i'  busca exata sem case sensitive
   const find = (req, res) => {
@@ -83,23 +83,23 @@ function AppController(){
         if (!data) {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
         const newdata = (data.length > 0) ? data : {message: "vazio"}
-        res.send(newdata);
+        res.send(newdata)
         //console.log(queryx)
       })
       .catch((err) => {
         if (err.kind === "ObjectId") {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
         return res.status(500).send({
           message: "Error retrieving message with id " + req.params.messageId,
-        });
-      });
-  };
+        })
+      })
+  }
 
   // Update a message identified by the messageId in the request
   const update = (req, res) => {
@@ -116,21 +116,21 @@ function AppController(){
         if (!data) {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
-        res.send(data);
+        res.send(data)
       })
       .catch((err) => {
         if (err.kind === "ObjectId") {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
         return res.status(500).send({
           message: "Error updating message with id " + req.params.messageId,
-        });
-      });
-  };
+        })
+      })
+  }
 
   // Delete a message with the specified messageId in the request
   const deleta = (req, res) => {
@@ -139,21 +139,21 @@ function AppController(){
         if (!data) {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
-        res.send({ message: "Message deleted successfully!" });
+        res.send({ message: "Message deleted successfully!" })
       })
       .catch((err) => {
         if (err.kind === "ObjectId" || err.name === "NotFound") {
           return res.status(404).send({
             message: "Message not found with id " + req.params.messageId,
-          });
+          })
         }
         return res.status(500).send({
           message: "Could not delete message with id " + req.params.messageId,
-        });
-      });
-  };
+        })
+      })
+  }
 
   return {
     index,
@@ -167,4 +167,4 @@ function AppController(){
   
 }
 
-export default AppController
+export default AppController()

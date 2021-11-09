@@ -3,8 +3,8 @@ import { Core } from './core.js'
 const core = Core()
 
 try {
-
-   core.start()
+    console.log('[index] cold started')
+    core.start()
 
 } catch (error) {
 

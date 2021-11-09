@@ -1,20 +1,23 @@
 import connectBd from "./bd.js"
 import createServer from "./server.js"
 
-export function Core(){
    const bd = connectBd()
    const server = createServer()
 
+
+
+export function Core(){
+
    async function start(){
 
-        console.log('[core]começou')
+        console.log('[core]started')
         await bd.start()
         await server.start()
         return true
     }
 
     function stop(){
-        console.log('[core]acabou')
+        console.log('[core]done')
         //bd.stop()
     }
 
