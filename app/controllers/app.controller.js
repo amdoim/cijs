@@ -8,7 +8,9 @@ function AppController(){
   const index = (req, res) => {
     console.log('[app.controller.index] done')
     const dados = {
-      eu: 'junior'
+      locals:{
+        eu: 'junior'
+      }
     }
     res.render('index', dados)
   }

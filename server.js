@@ -1,6 +1,7 @@
 import express from "express"
 import bodyParser from "body-parser"
 import rotas from "./app/routes/app.routes.js"
+import es6Renderer from 'express-es6-template-engine'
 
 
 function createServer(){
@@ -8,8 +9,12 @@ function createServer(){
     async function start(){
         
         const app = express()
+        app.engine('html', es6Renderer)
         app.set('views', './app/views')
-        app.set('view engine', 'pug')
+        app.set('view engine', 'html')
+        //app.set('view engine', 'pug')
+
+
         app.use(express.static('./public'))
 
         app.use(bodyParser.urlencoded({ extended: true }))
